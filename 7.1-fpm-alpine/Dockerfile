@@ -46,3 +46,5 @@ json \
 #
 # cleanup to keep the images size small
 && apk del --no-cache .builddeps
+
+ADD yii.ini $PHP_INI_DIR/conf.d/
