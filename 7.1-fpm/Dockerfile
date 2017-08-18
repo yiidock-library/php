@@ -31,6 +31,19 @@ opcache \
 zip \
 json 
 
-RUN apt-get autoremove -y \
+RUN apt-get purge -y \
+libxml2-dev \
+libfreetype6-dev \
+libjpeg62-turbo-dev \
+libpng12-dev \
+libicu-dev \
+libmcrypt-dev \
+libpq-dev \
+libsqlite3-dev \
+comerr-dev \
+icu-devtools \
+libssl-dev \
+libssl-doc \
+zlib1g-dev \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
