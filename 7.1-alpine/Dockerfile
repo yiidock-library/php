@@ -12,7 +12,10 @@ libmcrypt \
 libxml2 \
 zlib \
 libpq \
-sqlite-libs
+sqlite-libs \
+openssl \
+ca-certificates \
+&& update-ca-certificates    
 
 # add build deps that will be removed
 RUN apk add --no-cache --virtual .builddeps \
@@ -50,5 +53,5 @@ json \
 ADD yii.ini $PHP_INI_DIR/conf.d/
 
 # Install composer
-COPY install-composer.sh ~
-RUN sh ~/install-composer.sh && rm ~/install-composer.sh
+COPY install-composer.sh /
+RUN sh /install-composer.sh && rm /install-composer.sh
