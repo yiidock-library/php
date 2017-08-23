@@ -53,5 +53,5 @@ json \
 ADD yii.ini $PHP_INI_DIR/conf.d/
 
 # Install composer
-COPY install-composer.sh /
-RUN sh /install-composer.sh && rm /install-composer.sh
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+ONBUILD RUN composer self-update
